@@ -8,28 +8,53 @@
         <version>3.3.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>pe.elcafe</groupId>
     <artifactId>api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
     <name>el-cafe-api</name>
-    <description>el-cafe-api</description>
-    <url/>
+    <description>API para la gestión del proyecto propuesta para El Café</description>
+    <url>https://github.com/CarloMechatronics/el-cafe-api</url>
+
     <licenses>
-        <license/>
+        <license>
+            <name>Custom License</name>
+            <url>https://github.com/CarloMechatronics/el-cafe-api/blob/main/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
     </licenses>
+
     <developers>
-        <developer/>
+        <developer>
+            <id>CarloMechatronics</id>
+            <name>Carlo Stefano Torres Gabrielli</name>
+            <email>carlo.torres@utec.edu.pe</email>
+        </developer>
+        <developer>
+            <id>Aldebaran2105</id>
+            <name>Santiago Aldebaran Cama Ardiles</name>
+            <email>santiago.cama@utec.edu.pe</email>
+        </developer>
     </developers>
+
     <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
+        <connection>scm:git:git://github.com/CarloMechatronics/el-cafe-api.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:CarloMechatronics/el-cafe-api.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/CarloMechatronics/el-cafe-api</url>
     </scm>
+
     <properties>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
+        <!--MAIN-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -40,23 +65,33 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
+            <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <!--MAIN-->
+
+        <!--DATABASE-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!--DATABASE-->
+
+        <!--TESTING-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -78,10 +113,31 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--TESTING-->
     </dependencies>
 
     <build>
