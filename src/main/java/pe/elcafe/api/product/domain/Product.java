@@ -6,11 +6,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import pe.elcafe.api.brand.domain.Brand;
 import pe.elcafe.api.category.domain.Category;
 import pe.elcafe.api.constraints.nullablesize.NullableSize;
+import pe.elcafe.api.discount.domain.Discount;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -59,4 +65,16 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "category_id", nullable = false)
     private Category category;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Column(nullable = false)
+    private List<Discount> discounts = new ArrayList<>();
+
+    @CreationTimestamp
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdDate;
+
+    @UpdateTimestamp
+    @Column(nullable = false)
+    private LocalDateTime lastUpdatedDate;
 }
