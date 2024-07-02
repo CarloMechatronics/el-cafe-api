@@ -1,9 +1,7 @@
 package pe.elcafe.api.discount.domain;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,6 +39,9 @@ public class Discount {
     @Future
     @Column(nullable = false)
     private LocalDate endDate;
+
+    @PositiveOrZero
+    private Integer stockQty;
 
     @NotNull
     @Column(nullable = false)

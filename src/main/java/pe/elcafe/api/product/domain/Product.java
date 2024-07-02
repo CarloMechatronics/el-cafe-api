@@ -47,7 +47,7 @@ public class Product {
     private BigDecimal price;
 
     @NotNull
-    @Min(value = 0)
+    @PositiveOrZero
     @Column(nullable = false)
     private Integer stockQty = 0;
 
