@@ -59,11 +59,11 @@ public class Product {
     private Boolean active = Boolean.FALSE;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "brand_id", nullable = false)
+    @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
