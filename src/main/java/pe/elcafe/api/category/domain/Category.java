@@ -2,6 +2,8 @@ package pe.elcafe.api.category.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +28,8 @@ public class Category {
     private Long id;
 
     @NotBlank
-    @Column(nullable = false)
+    @Size(max = 31)
+    @Column(nullable = false, length = 31)
     private String name;
 
     @NullableSize(max = 255)
@@ -35,6 +38,10 @@ public class Category {
 
     @NullableSize(min=3)
     private String imageUrl;
+
+    @NotNull
+    @Column(nullable = false)
+    private Boolean active = Boolean.FALSE;
 
     @OneToMany(mappedBy = "category", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     private List<Product> products = new ArrayList<>();
