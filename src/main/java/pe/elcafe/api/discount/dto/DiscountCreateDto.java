@@ -5,7 +5,10 @@ import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import pe.elcafe.api.constraints.atleastonenotnull.AtLeastOneNotNull;
 import pe.elcafe.api.constraints.validdiscount.ValidDiscount;
 import pe.elcafe.api.product.domain.Product;
 
@@ -14,6 +17,9 @@ import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
+@AtLeastOneNotNull(fieldNames = {"productId", "productSku"})
 public class DiscountCreateDto {
     @NotNull
     @ValidDiscount
@@ -32,7 +38,7 @@ public class DiscountCreateDto {
 
     private Boolean active;
 
-    private Product product;
+    private String productId;
 
-    private String sku;
+    private String productSku;
 }
