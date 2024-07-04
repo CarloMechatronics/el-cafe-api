@@ -16,7 +16,7 @@ public class ValidTimeRangeValidator implements ConstraintValidator<ValidTimeRan
     }
 
     @Override
-    public boolean isValid(LocalDateTime reservationTime, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(LocalDateTime reservationTime, ConstraintValidatorContext context) {
         if (reservationTime == null)
             return true;
 

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class NonEmptyListValidator implements ConstraintValidator<NonEmptyList, List<?>> {
     @Override
-    public boolean isValid(List<?> list, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(List<?> list, ConstraintValidatorContext context) {
         return list != null && !list.isEmpty();
     }
 }

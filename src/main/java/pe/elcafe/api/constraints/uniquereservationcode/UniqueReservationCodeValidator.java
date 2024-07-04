@@ -5,7 +5,7 @@ import jakarta.validation.ConstraintValidatorContext;
 
 public class UniqueReservationCodeValidator implements ConstraintValidator<UniqueReservationCode, String> {
     @Override
-    public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(String s, ConstraintValidatorContext context) {
         return false; // TODO: Implement when reservation repository is created
     }
 }
