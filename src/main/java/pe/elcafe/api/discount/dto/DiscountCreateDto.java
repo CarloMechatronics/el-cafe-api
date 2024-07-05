@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pe.elcafe.api.constraints.atleastonenotnull.AtLeastOneNotNull;
 import pe.elcafe.api.constraints.validdiscount.ValidDiscount;
-import pe.elcafe.api.product.domain.Product;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

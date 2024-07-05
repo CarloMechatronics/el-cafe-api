@@ -29,7 +29,7 @@ public class Category {
 
     @NotBlank
     @Size(max = 31)
-    @Column(nullable = false, length = 31)
+    @Column(unique = true, nullable = false, length = 31)
     private String name;
 
     @NullableSize(max = 255)
