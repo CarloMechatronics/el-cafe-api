@@ -29,7 +29,7 @@ public abstract class UserAccount {
     @NotBlank
     @Size(min = 7, max = 15)
     @Column(unique = true, nullable = false, length = 15)
-    private String username;
+    private String username; // Admin or Student Code
 
     @NotBlank
     @Size(min = 8, max = 24)
@@ -38,15 +38,20 @@ public abstract class UserAccount {
 
     @NullableSize(max = 31)
     @Column(length = 31)
-    private String firstName;
+    private String names;
 
     @NullableSize(max = 31)
     @Column(length = 31)
-    private String middleName;
+    private String paternalSurname;
 
     @NullableSize(max = 127)
     @Column(length = 127)
-    private String lastName;
+    private String maternalSurname;
+
+    @NotBlank
+    @Size(min = 7, max = 15)
+    @Column(unique = true, nullable = false, length = 15)
+    private String dni;
 
     @NotBlank
     @Email
