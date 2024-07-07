@@ -1,5 +1,7 @@
 package pe.elcafe.api.product.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +16,8 @@ import java.math.BigDecimal;
 @Setter
 public class ProductDisplayDto {
     private String name;
+
+    private String presentation;
 
     private String sku;
 

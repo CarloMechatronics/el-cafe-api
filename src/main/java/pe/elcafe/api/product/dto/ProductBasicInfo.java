@@ -17,6 +17,8 @@ import java.math.BigDecimal;
 public class ProductBasicInfo {
     private String name;
 
+    private String presentation;
+
     private String description;
 
     private String sku;

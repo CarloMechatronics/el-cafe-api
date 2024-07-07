@@ -1,6 +1,7 @@
 package pe.elcafe.api.product.dto;
 
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +21,10 @@ public class ProductCreateDto {
     @NotBlank
     @Size(min = 3, max = 63)
     private String name;
+
+    @NotBlank
+    @Size(max = 31)
+    private String presentation;
 
     @NullableSize(max = 255)
     private String description;

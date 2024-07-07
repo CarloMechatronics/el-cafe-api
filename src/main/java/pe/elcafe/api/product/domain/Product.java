@@ -33,6 +33,11 @@ public class Product {
     @Column(nullable = false, length = 63)
     private String name;
 
+    @NotBlank
+    @Size(max = 31)
+    @Column(nullable = false, length = 31)
+    private String presentation;
+
     @NullableSize(max = 255)
     @Column(length = 255)
     private String description;
