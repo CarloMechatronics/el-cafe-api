@@ -40,14 +40,4 @@ public class ShoppingCart {
     @UpdateTimestamp
     @Column(nullable = false)
     private LocalDateTime lastUpdatedDate;
-
-    public void addItem(CartItem item) {
-        items.add(item);
-        item.setShoppingCart(this);
-    }
-
-    public void removeItem(CartItem item) {
-        items.remove(item);
-        item.setShoppingCart(null);
-    }
 }

@@ -49,8 +49,4 @@ public class OrderItem {
     @UpdateTimestamp
     @Column(nullable = false)
     private LocalDateTime lastUpdatedDate;
-
-    public BigDecimal getTotalPrice() {
-        return snapshotPrice.multiply(new BigDecimal(quantity));
-    }
 }

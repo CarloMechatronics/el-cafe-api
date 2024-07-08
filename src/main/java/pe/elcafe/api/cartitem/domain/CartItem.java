@@ -37,7 +37,7 @@ public class CartItem {
 
     @Positive
     @Column(nullable = false)
-    private Integer quantity;
+    private Integer quantity = 1;
 
     @NotNull
     @Column(nullable = false)
@@ -50,8 +50,4 @@ public class CartItem {
     @UpdateTimestamp
     @Column(nullable = false)
     private LocalDateTime lastUpdatedDate;
-
-    public BigDecimal getTotalPrice() {
-        return snapshotPrice.multiply(new BigDecimal(quantity));
-    }
 }

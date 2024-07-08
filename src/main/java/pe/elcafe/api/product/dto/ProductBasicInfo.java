@@ -15,6 +15,8 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class ProductBasicInfo {
+    private Long id;
+
     private String name;
 
     private String presentation;

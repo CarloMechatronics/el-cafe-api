@@ -50,22 +50,4 @@ public class PurchaseOrder {
     @UpdateTimestamp
     @Column(nullable = false)
     private LocalDateTime lastUpdatedDate;
-
-    public void addItem(OrderItem item) {
-        items.add(item);
-        item.setPurchaseOrder(this);
-        calculateTotalPrice();
-    }
-
-    public void removeItem(OrderItem item) {
-        items.remove(item);
-        item.setPurchaseOrder(null);
-        calculateTotalPrice();
-    }
-
-    public void calculateTotalPrice() {
-        this.totalPrice = items.stream()
-                .map(OrderItem::getTotalPrice)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-    }
 }
